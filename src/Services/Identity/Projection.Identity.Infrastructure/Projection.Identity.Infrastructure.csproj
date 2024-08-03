@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore.Models" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Shared\Projection.Shared.Extensions\Projection.Shared.Extensions.csproj" />
+    <ProjectReference Include="..\Projection.Identity.Domain\Projection.Identity.Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Shared\Projection.Shared.Constants\Projection.Shared.Constants.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <AspnetVersion>8.0.4</AspnetVersion>
+    <MicrosoftExtensionsVersion>8.4.0</MicrosoftExtensionsVersion>
+    <EfVersion>8.0.4</EfVersion>
+    <RuntimeVersion>8.0.0</RuntimeVersion>
+    <AspireVersion>8.0.0</AspireVersion>
+    <GrpcVersion>2.62.0</GrpcVersion>
+    <OpenTelemetryVersion>1.8.1</OpenTelemetryVersion>
+    <OpenIddictVersion>5.7.0</OpenIddictVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
+    <PackageVersion Include="MediatR" Version="12.4.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.6" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.4.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="8.0.0" />
+    <PackageVersion Include="OpenIddict.AspNetCore" Version="5.7.0" />
+    <PackageVersion Include="OpenIddict.EntityFrameworkCore" Version="5.7.0" />
+    <PackageVersion Include="OpenIddict.EntityFrameworkCore.Models" Version="5.7.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="$(OpenTelemetryVersion)" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryVersion)" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryVersion)" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.8.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.2" />
+    <PackageVersion Include="MassTransit" Version="8.2.2" />
+    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.2.2" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+  </ItemGroup>
+</Project>

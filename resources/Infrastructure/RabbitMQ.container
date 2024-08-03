@@ -1,0 +1,16 @@
+[Unit]
+Description=RabbitMQ Container
+
+[Container]
+Image=docker.io/rabbitmq:3-management
+AutoUpdate=registry
+PublishPort=15672:15672
+PublishPort=5672:5672
+ContainerName=RabbitMQ
+
+[Service]
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

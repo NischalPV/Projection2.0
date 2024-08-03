@@ -1,0 +1,18 @@
+[Unit]
+Description=PostgreSQL Container
+
+[Container]
+Image=docker.io/library/postgres:16.3
+ContainerName=PostreSQL-Server
+AutoUpdate=registry
+PublishPort=5432:5432
+Volume=postgres-volume:/var/lib/postgresql/data
+Environment=POSTGRES_USER=sa
+Environment=POSTGRES_PASSWORD=Radeon1GB#
+
+[Service]
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

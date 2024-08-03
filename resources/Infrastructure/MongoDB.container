@@ -1,0 +1,18 @@
+[Unit]
+Description=MongoDB Server Container
+
+[Container]
+Image=docker.io/mongodb/mongodb-community-server:7.0.11-ubi8
+ContainerName=MongoDB-Server
+AutoUpdate=registry
+PublishPort=27017:27017
+Volume=mongo-volume/data:/data/db
+Environment=MONGO_INITDB_ROOT_USERNAME=sa
+Environment=MONGO_INITDB_ROOT_PASSWORD=Radeon@1GB#
+
+[Service]
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target

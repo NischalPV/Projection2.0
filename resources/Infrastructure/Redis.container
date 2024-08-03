@@ -1,0 +1,17 @@
+[Unit]
+Description=Redis Container
+
+[Container]
+Image=docker.io/redis/redis-stack:6.2.6-v15
+AutoUpdate=registry
+PublishPort=6379:6379
+PublishPort=8001:8001
+Volume=redisdata:/data
+ContainerName=Redis-Stack
+
+[Service]
+Restart=always
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
