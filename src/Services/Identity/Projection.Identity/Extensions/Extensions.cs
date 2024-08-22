@@ -67,12 +67,20 @@ internal static class Extensions
                        .SetUserinfoEndpointUris("connect/userinfo")
                        .SetVerificationEndpointUris("connect/verify");
 
+                // Encryption and signing of tokens
+                options
+                    .AddEphemeralEncryptionKey()
+                    .AddEphemeralSigningKey()
+                    .DisableAccessTokenEncryption();
+
                 // Mark the "email", "profile" and "roles" scopes as supported scopes.
                 options.RegisterScopes(Scopes.Email, Scopes.Profile, Scopes.Roles);
 
                 // Note: this sample only uses the authorization code flow but you can enable
                 // the other flows if you need to support implicit, password or client credentials.
-                options.AllowAuthorizationCodeFlow();
+                options.AllowAuthorizationCodeFlow()
+                       .AllowImplicitFlow()
+                       .AllowRefreshTokenFlow();
 
                 // Register the signing and encryption credentials.
                 options.AddDevelopmentEncryptionCertificate()

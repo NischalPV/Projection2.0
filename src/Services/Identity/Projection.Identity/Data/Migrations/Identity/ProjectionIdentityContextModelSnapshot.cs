@@ -288,13 +288,13 @@ namespace Projection.Identity.Data.Migrations.Identity
                             LastName = "@Projection",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN.PROJECTION@HOTMAIL.COM",
-                            NormalizedUserName = "+919888888888",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEaoFKnrYG/oMlTS9cUhIp9mURVKKdaVQvnLrUfeHs3ykfOVn3kSBeHFhAGetY2EEA==",
+                            NormalizedUserName = "ADMIN.PROJECTION@HOTMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFfJ4+BT1xnzAw0bfmAhdrO78PrcMrF9o0IzygLPXqUx9tsm9k7MjorJWiwS/KHUxA==",
                             PhoneNumber = "+919888888888",
                             PhoneNumberConfirmed = true,
                             SecurityStamp = "124d2334-c5f6-4163-922c-7c6cf18833e1",
                             TwoFactorEnabled = false,
-                            UserName = "+919888888888"
+                            UserName = "admin.projection@hotmail.com"
                         });
                 });
 

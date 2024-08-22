@@ -1,8 +1,9 @@
 ﻿using Projection.Shared.Constants;
+using Projection.Shared.Data.Contexts;
 
 namespace Projection.BuildingBlocks.IntegrationEventLogEF;
 
-public class IntegrationEventLogContext : DbContext
+public class IntegrationEventLogContext : BaseDbContext
 {
     public IntegrationEventLogContext(DbContextOptions<IntegrationEventLogContext> options) : base(options)
     {

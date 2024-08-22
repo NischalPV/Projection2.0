@@ -56,6 +56,10 @@ public static class Config
                 PostLogoutRedirectUris =
                 {
                     new Uri("http://localhost:6002/signout-callback-oidc")
+                },
+                Settings =
+                {
+                    ["Id"] = "01912e03-51a6-7a70-bf92-4ae0ef632499"
                 }
             },
 
@@ -64,8 +68,8 @@ public static class Config
                 ClientId = "projection-tenants-api--dev",
                 ClientSecret = "projection@2023".Sha256(),
                 DisplayName = "Projection Tenants API OpenId Client",
-                ClientType = OpenIddictConstants.ClientTypes.Confidential,
-                ApplicationType = OpenIddictConstants.ApplicationTypes.Web,
+                //ClientType = OpenIddictConstants.ClientTypes.Confidential,
+                //ApplicationType = OpenIddictConstants.ApplicationTypes.Web,
                 ConsentType = OpenIddictConstants.ConsentTypes.Implicit,
                 Permissions =
                 {
@@ -102,6 +106,10 @@ public static class Config
                 PostLogoutRedirectUris =
                 {
                     new Uri("https://localhost:7044/swagger/")
+                },
+                Settings =
+                {
+                    ["Id"] = "01912e03-51a6-75cd-a1de-3aa4fb87a3d8"
                 }
         }
 
@@ -122,7 +130,14 @@ public static class Config
                     [CultureInfo.GetCultureInfo("en-US")] = "Access to the Projection Tenants API",
                     [CultureInfo.GetCultureInfo("fr-FR")] = "Accès à l'API des locataires de projection",
                     [CultureInfo.GetCultureInfo("de-DE")] = "Zugriff auf die Projektionsmieter-API",
-                }
+                },
+                Descriptions =
+                {
+                    [CultureInfo.GetCultureInfo("en-US")] = "This scope allows the client to access the Projection Tenants API",
+                    [CultureInfo.GetCultureInfo("fr-FR")] = "Ce champ permet au client d'accéder à l'API des locataires de projection",
+                    [CultureInfo.GetCultureInfo("de-DE")] = "Dieser Bereich ermöglicht es dem Client, auf die Projektionsmieter-API zuzugreifen",
+                },
+                Description = "01912e03-51a6-7892-9831-0f132b5417a2", // We will use this as the Id in descriptor. Then while creating migrations we will use value from descriptions.
             }
         ];
 }

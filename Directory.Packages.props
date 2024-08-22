@@ -6,35 +6,58 @@
     <MicrosoftExtensionsVersion>8.4.0</MicrosoftExtensionsVersion>
     <EfVersion>8.0.4</EfVersion>
     <RuntimeVersion>8.0.0</RuntimeVersion>
-    <AspireVersion>8.0.0</AspireVersion>
+    <AspireVersion>8.1.0</AspireVersion>
     <GrpcVersion>2.62.0</GrpcVersion>
-    <OpenTelemetryVersion>1.8.1</OpenTelemetryVersion>
-    <OpenIddictVersion>5.7.0</OpenIddictVersion>
+    <OpenTelemetryVersion>1.9.0</OpenTelemetryVersion>
+    <OpenIddictVersion>5.7.1</OpenIddictVersion>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="Asp.Versioning.Mvc" Version="8.1.0" />
+    <PackageVersion Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
+    <PackageVersion Include="Azure.Identity" Version="1.12.0" />
+    <PackageVersion Include="EFCore.BulkExtensions" Version="8.1.0" />
+    <PackageVersion Include="FluentValidation" Version="11.9.2" />
     <PackageVersion Include="MediatR" Version="12.4.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.7" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.7" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.7" />
-    <PackageVersion Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.6" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.4.0" />
-    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="8.0.0" />
-    <PackageVersion Include="OpenIddict.AspNetCore" Version="5.7.0" />
-    <PackageVersion Include="OpenIddict.EntityFrameworkCore" Version="5.7.0" />
-    <PackageVersion Include="OpenIddict.EntityFrameworkCore.Models" Version="5.7.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.Grpc.Swagger" Version="0.8.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Abstractions" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.8.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="8.1.0" />
+    <PackageVersion Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.0.1" />
+    <PackageVersion Include="OpenIddict.AspNetCore" Version="$(OpenIddictVersion)" />
+    <PackageVersion Include="OpenIddict.EntityFrameworkCore" Version="$(OpenIddictVersion)" />
+    <PackageVersion Include="OpenIddict.EntityFrameworkCore.Models" Version="$(OpenIddictVersion)" />
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="$(OpenTelemetryVersion)" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryVersion)" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.9.0-beta.1" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryVersion)" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.8.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="$(OpenTelemetryVersion)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
     <PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.2" />
-    <PackageVersion Include="MassTransit" Version="8.2.2" />
-    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.2.2" />
+    <PackageVersion Include="MassTransit" Version="8.2.4" />
+    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.2.4" />
     <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <PackageVersion Include="Serilog" Version="4.0.1" />
+    <PackageVersion Include="Serilog.Settings.Configuration" Version="8.0.2" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Http" Version="9.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Seq" Version="8.0.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.7.1" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.7.1" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.7.1" />
+    <PackageVersion Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 </Project>

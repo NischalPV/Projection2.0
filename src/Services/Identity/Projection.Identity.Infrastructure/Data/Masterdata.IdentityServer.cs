@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Abstractions;
 using OpenIddict.EntityFrameworkCore.Models;
 using Projection.Shared.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -56,11 +56,11 @@ internal static partial class Masterdata
             {
                 Name = descriptor.Name,
                 DisplayName = descriptor.DisplayName,
-                Description = descriptor.Description,
-                
+                Id = descriptor.Description,
+                Description = descriptor.Descriptions[CultureInfo.GetCultureInfo("en-US")],
             };
 
-            scope.SetScopeResources(descriptor.Resources);
+            scope.SetScopeResources(descriptor.Resources.ToImmutableArray());
             scope.SetScopeDisplayNames(descriptor.DisplayNames);
 
             scopes.Add(scope);
@@ -70,11 +70,11 @@ internal static partial class Masterdata
     }
 
 
-    private static void SetScopeResources(this OpenIddictEntityFrameworkCoreScope scope, HashSet<string> resources)
+    private static void SetScopeResources(this OpenIddictEntityFrameworkCoreScope scope, ImmutableArray<string> resources)
     {
         ArgumentNullException.ThrowIfNull(scope);
 
-        if (resources.IsNullOrEmpty())
+        if (resources.IsDefaultOrEmpty)
         {
             scope.Resources = null;
         }
@@ -103,7 +103,7 @@ internal static partial class Masterdata
     {
         ArgumentNullException.ThrowIfNull(scope);
 
-        if (displayNames.IsNullOrEmpty())
+        if (displayNames.Count == 0)
         {
             scope.DisplayNames = null;
         }
@@ -142,13 +142,14 @@ internal static partial class Masterdata
                 ApplicationType = descriptor.ApplicationType,
                 ConsentType = descriptor.ConsentType,
                 ClientType = descriptor.ClientType,
+                Id = descriptor.Settings["Id"]
 
             };
 
-            application.SetPermissionsAsync(descriptor.Permissions);
-            application.SetRedirectUrisAsync(descriptor.RedirectUris);
-            application.SetPostLogoutRedirectUrisAsync(descriptor.PostLogoutRedirectUris);
-            application.SetRequirementsAsync(descriptor.Requirements);
+            application.SetPermissionsAsync(descriptor.Permissions.ToImmutableArray());
+            application.SetRedirectUrisAsync(descriptor.RedirectUris.Select(uri => uri.OriginalString).ToImmutableArray());
+            application.SetPostLogoutRedirectUrisAsync(descriptor.PostLogoutRedirectUris.Select(uri => uri.OriginalString).ToImmutableArray());
+            application.SetRequirementsAsync(descriptor.Requirements.ToImmutableArray());
 
             applications.Add(application);
 
@@ -157,14 +158,14 @@ internal static partial class Masterdata
         return applications;
     }
 
-    private static void SetPermissionsAsync(this OpenIddictEntityFrameworkCoreApplication application, HashSet<string> permissions)
+    private static void SetPermissionsAsync(this OpenIddictEntityFrameworkCoreApplication application, ImmutableArray<string> permissions)
     {
         if (application is null)
         {
             throw new ArgumentNullException(nameof(application));
         }
 
-        if (permissions.IsNullOrEmpty())
+        if (permissions.IsDefaultOrEmpty)
         {
             application.Permissions = null;
         }
@@ -189,14 +190,14 @@ internal static partial class Masterdata
         application.Permissions = Encoding.UTF8.GetString(stream.ToArray());
     }
 
-    private static void SetPostLogoutRedirectUrisAsync(this OpenIddictEntityFrameworkCoreApplication application, HashSet<Uri> uris)
+    private static void SetPostLogoutRedirectUrisAsync(this OpenIddictEntityFrameworkCoreApplication application, ImmutableArray<string> uris)
     {
         if (application is null)
         {
             throw new ArgumentNullException(nameof(application));
         }
 
-        if (uris.IsNullOrEmpty())
+        if (uris.IsDefaultOrEmpty)
         {
             application.PostLogoutRedirectUris = null;
         }
@@ -221,14 +222,14 @@ internal static partial class Masterdata
         application.PostLogoutRedirectUris = Encoding.UTF8.GetString(stream.ToArray());
     }
 
-    private static void SetRedirectUrisAsync(this OpenIddictEntityFrameworkCoreApplication application, HashSet<Uri> uris)
+    private static void SetRedirectUrisAsync(this OpenIddictEntityFrameworkCoreApplication application, ImmutableArray<string> uris)
     {
         if (application is null)
         {
             throw new ArgumentNullException(nameof(application));
         }
 
-        if (uris.IsNullOrEmpty())
+        if (uris.IsDefaultOrEmpty)
         {
             application.RedirectUris = null;
         }
@@ -253,14 +254,14 @@ internal static partial class Masterdata
         application.RedirectUris = Encoding.UTF8.GetString(stream.ToArray());
     }
 
-    private static void SetRequirementsAsync(this OpenIddictEntityFrameworkCoreApplication application, HashSet<string> requirements)
+    private static void SetRequirementsAsync(this OpenIddictEntityFrameworkCoreApplication application, ImmutableArray<string> requirements)
     {
         if (application is null)
         {
             throw new ArgumentNullException(nameof(application));
         }
 
-        if (requirements.IsNullOrEmpty())
+        if (requirements.IsDefaultOrEmpty)
         {
             application.Requirements = null;
         }

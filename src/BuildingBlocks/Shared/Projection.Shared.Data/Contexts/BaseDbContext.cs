@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Projection.Shared.Data.Extensions;
 using Projection.Shared.Data.Interfaces;
-using System.Data;
+using Projection.Shared.Entities.EntityConfigurations;
 
 namespace Projection.Shared.Data.Contexts;
 
@@ -34,6 +34,12 @@ public class BaseDbContext : DbContext, IUnitOfWork
     }
 
     #endregion
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new ClientRequestEntityTypeConfiguration());
+        base.OnModelCreating(modelBuilder);
+    }
 
     public virtual async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
     {

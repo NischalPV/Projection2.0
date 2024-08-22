@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Projection.Identity.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projection.Identity.Infrastructure.Data;
 
@@ -35,9 +30,9 @@ internal static partial class Masterdata
                 LastName = "@Projection",
                 DateOfBirth = new DateTime(2023, 1, 1, 0, 0, 0, DateTimeKind.Utc),
                 Email = "admin.projection@hotmail.com",
-                UserName = "+919888888888",
+                UserName = "admin.projection@hotmail.com",
                 PhoneNumber = "+919888888888",
-                NormalizedUserName = "+919888888888".ToUpper(),
+                NormalizedUserName = "admin.projection@hotmail.com".ToUpper(),
                 NormalizedEmail = "admin.projection@hotmail.com".ToUpper(),
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true,

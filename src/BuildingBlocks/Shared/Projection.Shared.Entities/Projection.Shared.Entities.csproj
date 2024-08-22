@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Projection.Shared.Constants\Projection.Shared.Constants.csproj" />
+    <ProjectReference Include="..\Projection.Shared.Models\Projection.Shared.Models.csproj" />
   </ItemGroup>
 
 </Project>

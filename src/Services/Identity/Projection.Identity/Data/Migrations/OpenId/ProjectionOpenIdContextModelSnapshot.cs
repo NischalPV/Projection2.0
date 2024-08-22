@@ -90,11 +90,11 @@ namespace Projection.Identity.Data.Migrations.OpenId
                     b.HasData(
                         new
                         {
-                            Id = "999b0131-f2f5-45ab-8b0b-5e24302ba119",
+                            Id = "01912e03-51a6-7a70-bf92-4ae0ef632499",
                             ApplicationType = "web",
                             ClientId = "projection-ui--dev",
                             ClientSecret = "bUE6r4ekrGN8HLmiko/LoLEC1KIiDyqwNtte4dwjrHY=",
-                            ConcurrencyToken = "bb2f2cb2-9505-4b25-9b7d-2ce5c1d6f4c0",
+                            ConcurrencyToken = "04fa8d08-aea9-46b1-ad79-f6e0c9fb735f",
                             ConsentType = "implicit",
                             DisplayName = "Projection Frontend UI OpenId Client",
                             Permissions = "[\"ept:introspection\",\"ept:token\",\"ept:authorization\",\"ept:logout\",\"ept:device\",\"gt:implicit\",\"gt:authorization_code\",\"gt:refresh_token\",\"rst:code\",\"rst:id_token\",\"rst:token\",\"scp:email\",\"scp:profile\",\"scp:roles\",\"scp:projection-tenants-api\"]",
@@ -104,12 +104,10 @@ namespace Projection.Identity.Data.Migrations.OpenId
                         },
                         new
                         {
-                            Id = "cc9ee137-2548-4b6e-8a9e-3671b202f3e5",
-                            ApplicationType = "web",
+                            Id = "01912e03-51a6-75cd-a1de-3aa4fb87a3d8",
                             ClientId = "projection-tenants-api--dev",
                             ClientSecret = "bUE6r4ekrGN8HLmiko/LoLEC1KIiDyqwNtte4dwjrHY=",
-                            ClientType = "confidential",
-                            ConcurrencyToken = "a27fa057-864d-4f22-974d-52ad02e30ca1",
+                            ConcurrencyToken = "e0622ff9-1a64-4d8b-aa21-c0b14cbbec01",
                             ConsentType = "implicit",
                             DisplayName = "Projection Tenants API OpenId Client",
                             Permissions = "[\"ept:introspection\",\"ept:token\",\"ept:authorization\",\"ept:logout\",\"ept:device\",\"gt:implicit\",\"gt:authorization_code\",\"gt:refresh_token\",\"rst:code\",\"rst:id_token\",\"rst:token\",\"scp:email\",\"scp:profile\",\"scp:roles\",\"scp:projection-tenants-api\"]",
@@ -204,8 +202,9 @@ namespace Projection.Identity.Data.Migrations.OpenId
                     b.HasData(
                         new
                         {
-                            Id = "bd03e61a-137b-4a7b-bffe-eaba98e69c1b",
-                            ConcurrencyToken = "df4726c0-3326-44c2-9cdd-6500bb6b0526",
+                            Id = "01912e03-51a6-7892-9831-0f132b5417a2",
+                            ConcurrencyToken = "2fad9c0d-91a6-4fcf-a0c0-5d974ded6ad8",
+                            Description = "This scope allows the client to access the Projection Tenants API",
                             DisplayNames = "{\"en-US\":\"Access to the Projection Tenants API\",\"fr-FR\":\"Accès à l'API des locataires de projection\",\"de-DE\":\"Zugriff auf die Projektionsmieter-API\"}",
                             Name = "projection-tenants-api",
                             Resources = "[\"projection-tenants-api\"]"
